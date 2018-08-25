@@ -3,6 +3,8 @@ var targetNumber = 40;
   $("#number-to-guess").text(targetNumber);
 
   var counter = 0;
+  var wins = 0;
+  var losses = 0;
 
   // Now for the hard part. Creating multiple crystals each with their own unique number value.
 
@@ -51,11 +53,23 @@ var targetNumber = 40;
     alert("New score: " + counter);
 
     if (counter === targetNumber) {
-      alert("You win!");
+        wins++;
+		console.log("You won!");
     }
 
     else if (counter >= targetNumber) {
-      alert("You lose!!");
+        losses++;
+		console.log("You lost!");
     }
+
+    // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
+    var html =
+    "<p>Wins: " + wins + "</p>" +
+    "<p>Losses: " + losses + "</p>";
+
+   
+
+  // Set the inner HTML contents of the #game div to our html string
+  document.querySelector("#unit-4-game").innerHTML = html;
 
 });
