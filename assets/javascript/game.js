@@ -1,17 +1,24 @@
 var targetNumber = 40;
 
   $("#number-to-guess").text(targetNumber);
+  
 
   var counter = 0;
   var wins = 0;
   var losses = 0;
+
   var totalScore = 0;
   $("#your-total-score-is").text(totalScore);
+
+  function ResetGlobalVariables(){
+    //list of all the variables with original attributes here
+     totalScore = 0;
+ }
 
   // Now for the hard part. Creating multiple crystals each with their own unique number value.
 
   // We begin by expanding our array to include four options.
-  var numberOptions = [10, 6, 4, 5];
+  var numberOptions = [10, 6, 4, 8];
   
   // Next we create a for loop to create crystals for every numberOption.
   for (var i = 0; i < numberOptions.length; i++) {
@@ -35,6 +42,8 @@ var targetNumber = 40;
 
     // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
     $("#crystals").append(imageCrystal);
+
+    
   }
 
   // This time, our click event applies to every single crystal on the page. Not just one.
@@ -52,17 +61,22 @@ var targetNumber = 40;
     totalScore += crystalValue;
 
     // All of the same game win-lose logic applies. So the rest remains unchanged.
-    alert("New score: " + totalScore);
+    //alert("New score: " + totalScore);
 
     if (totalScore === targetNumber) {
         wins++;
+        ResetGlobalVariables();
 		console.log("You won!");
     }
+    
 
     else if (totalScore >= targetNumber) {
         losses++;
-		console.log("You lost!");
+        ResetGlobalVariables();
+        console.log("You lost!");
     }
+
+    
 
     // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
     var html =
@@ -74,5 +88,10 @@ var targetNumber = 40;
 
   // Set the inner HTML contents of the #game div to our html string
   document.querySelector("#unit-4-game").innerHTML = html;
+  
+  
 
 });
+
+
+
