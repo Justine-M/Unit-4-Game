@@ -5,6 +5,8 @@ var targetNumber = 40;
   var counter = 0;
   var wins = 0;
   var losses = 0;
+  var totalScore = 0;
+  $("#your-total-score-is").text(totalScore);
 
   // Now for the hard part. Creating multiple crystals each with their own unique number value.
 
@@ -47,17 +49,17 @@ var targetNumber = 40;
     crystalValue = parseInt(crystalValue);
     // We then add the crystalValue to the user's "counter" which is a global variable.
     // Every click, from every crystal adds to the global counter.
-    counter += crystalValue;
+    totalScore += crystalValue;
 
     // All of the same game win-lose logic applies. So the rest remains unchanged.
-    alert("New score: " + counter);
+    alert("New score: " + totalScore);
 
-    if (counter === targetNumber) {
+    if (totalScore === targetNumber) {
         wins++;
 		console.log("You won!");
     }
 
-    else if (counter >= targetNumber) {
+    else if (totalScore >= targetNumber) {
         losses++;
 		console.log("You lost!");
     }
@@ -65,7 +67,8 @@ var targetNumber = 40;
     // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
     var html =
     "<p>Wins: " + wins + "</p>" +
-    "<p>Losses: " + losses + "</p>";
+    "<p>Losses: " + losses + "</p>" +
+    "<p>Your Total Score is: " + totalScore + "</p>";
 
    
 
