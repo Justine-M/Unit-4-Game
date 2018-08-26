@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>The Crystal Game</title>
-
-
+  
+  <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -15,17 +15,26 @@
   <p>You Will be given the a random number at the start of the game</p>
   <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
   <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
-  <p>The value os each crystal is hidden from you until you click on it.</p>
+  <p>The value of each crystal is hidden from you until you click on it.</p>
   <p> Each time when the game starts, the game will change the values of each crystal.</p>
 
   <h1>Number to Guess: <span id="number-to-guess"></span></h1>
   <div id="unit-4-game"></div>
 
-  <div id="crystals">
+  <!-- <div id="crystals">
+
+</div>-->
+
+<div class="crystals">
+<img src="assets/images/crystal1.jpg" class=gemImage id="one" alt="Crystal One">
+<img src="assets/images/crystal2.jpg" class=gemImage id="two" alt="Crystal Two">
+<img src="assets/images/crystal3.jpg" class=gemImage id="three" alt="Crystal Three">
+<img src="assets/images/crystal4.jpg" class=gemImage id="four" alt="Crystal Four">
+
 </div>
 
-<h1>Your Total Score Is</h1> 
-<p id="your-total-score-is"></p>
+<!-- <h1>Your Total Score Is</h1> --> 
+<!-- <p id="your-total-score-is"></p> -->
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/javascript/game.js"></script>

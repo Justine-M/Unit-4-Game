@@ -2,3 +2,33 @@
     width: 300px;
     height: 300px;
   }
+
+body {
+    background-color: black
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    font: bold;
+    font-size: 50px;
+    background-color: grey;
+    width: 800px;
+    height: 60px;
+    
+}
+
+p {
+    color: white;
+    text-align: center;
+    width: 800px;
+    height: 40px;
+}
+
+
+
+
+    
+
+
+
